@@ -24,24 +24,20 @@ class Heap:
         if self.fila_prioridade.count(None) == len(self.fila_prioridade):
             print("Nenhum pedido na fila.")
         else:
-            hp = []
-            for e in self.fila_prioridade:
-                hp.append((e[1], e[0], e[2]))
-
-            heapq.heapify(hp)
-            while hp:
-                y = heapq.heappop(hp)
-                self.lista_heap.append([y[1], y[0], e[2]])
-            print(self.lista_heap)
-
+            for i in range(len(self.fila_prioridade)):
+                heapq.heapify(self.fila_prioridade)
+                y = self.fila_prioridade.pop(0)
+                self.lista_heap.append(y)
+        print(self.lista_heap)
 
 heap = Heap()
 
-heap.definir_tamanho(3)
-heap.inserir_grupo([1, 2, "Augusto"])
-heap.inserir_grupo([2, 2, "Arbusto"])
-heap.inserir_grupo([1, 3, "Arbusto"])
-heap.inserir_grupo([1, 3, "Asadusto"])
+heap.definir_tamanho(5)
+heap.inserir_grupo((1, 20, "Augusto"))
+heap.inserir_grupo((2, 30, "Arbusto"))
+heap.inserir_grupo((1, 45, "Arbusto"))
+heap.inserir_grupo((2, 15, "SAAAD"))
+heap.inserir_grupo((3, 10, "UAAAAU"))
 heap.gerar_lista()
 
-#print(heap.fila_prioridade)
+
