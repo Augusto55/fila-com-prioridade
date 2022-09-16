@@ -1,4 +1,7 @@
 import heapq
+import random
+import names
+
 
 lista = [20, 11, 32, 5, 7]
 
@@ -9,5 +12,11 @@ lista = [20, 11, 32, 5, 7]
 
 lista.append(1)
 
+x = random.randint(10, 20)
+print(x)
+
+print(fake.name())
+
+print(names.get_first_name())
 
 
