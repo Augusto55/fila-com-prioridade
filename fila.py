@@ -30,6 +30,13 @@ class Heap:
                 self.lista_heap.append(y)
         print(self.lista_heap)
 
+    def mostrar_prox_pedido(self):
+        index = self.lista_heap[0]
+        print("Quantidade de pessoas do pedido: " + str(index[0]) + " pessoas \nTempo de preparo: " + str(index[1]) +
+        " minutos \nNome da reserva: " + str(index[2]))
+
+    
+
 heap = Heap()
 
 heap.definir_tamanho(5)
@@ -39,5 +46,6 @@ heap.inserir_grupo((1, 45, "Arbusto"))
 heap.inserir_grupo((2, 15, "SAAAD"))
 heap.inserir_grupo((3, 10, "UAAAAU"))
 heap.gerar_lista()
+heap.mostrar_prox_pedido()
 
 
