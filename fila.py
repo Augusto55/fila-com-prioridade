@@ -34,11 +34,13 @@ class Heap:
                 self.lista_heap.append(y)
 
     def mostrar_prox_pedido(self):
+        self.gerar_lista()
         index = self.lista_heap[0]
         print("Quantidade de pessoas do pedido: " + str(index[0]) + " pessoas \nTempo de preparo: " + str(index[1]) +
         " minutos \nNome da reserva: " + str(index[2]))
 
     def preparar_prox_ref(self):
+        self.gerar_lista()
         index = self.lista_heap[0]
         tempo = self.calcular_tempo_fila2() + index[1]
         print("Nome do pedido : " + index[2] + "\nTempo de espera estimado para o preparo: " + str(tempo))
@@ -53,7 +55,7 @@ class Heap:
 
     def entregar_refeição(self):
         grupo = self.fila_preparo[0][2]
-        self.fila_preparo.pop[0]
+        self.fila_preparo.pop(0)
         print("Grupo: " + grupo + "\nSeu pedido está pronto!")
 
     def gerar_simulacao(self):
@@ -66,6 +68,9 @@ class Heap:
             self.inserir_grupo((n_pessoas, tempo, nome))
         self.gerar_lista()
         print("Simulação gerada com sucesso!")
+
+
+
 
 
 
@@ -91,7 +96,10 @@ while True:
         elif insertion == 4:
             heap.preparar_prox_ref()
         elif insertion == 5:
-            heap.entregar_refeição()
+            try:
+                heap.entregar_refeição()
+            except IndexError:
+                print("Nenhum pedido para ser entregue")
         elif insertion == 6:
             heap.gerar_simulacao()
         elif insertion == 7:
