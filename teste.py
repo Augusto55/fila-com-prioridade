@@ -15,8 +15,6 @@ lista.append(1)
 x = random.randint(10, 20)
 print(x)
 
-print(fake.name())
-
 print(names.get_first_name())
 
 
